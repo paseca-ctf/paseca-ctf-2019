@@ -10,7 +10,11 @@
 
 long int saved_cookie = 0;
 
-#include "Debug.h"
+#define DEBUG 1
+#if DEBUG
+	#include "Debug.h"
+#endif
+
 #include "User.h"
 #include "ItemBlock.h"
 #include "Wax.h"

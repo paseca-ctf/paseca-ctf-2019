@@ -1,7 +1,5 @@
 #pragma once
 
-#define DEBUG 1
-
 extern void *__libc_malloc(size_t size);
 extern void __libc_free(void *ptr);
 

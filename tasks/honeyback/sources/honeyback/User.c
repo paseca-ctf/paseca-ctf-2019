@@ -72,7 +72,7 @@ long int generate_cookie()
 User* init_user()
 {
 	User *user = (User *)malloc(sizeof(User));
-	*((char *)&(user->cookie) + 0) = generate_cookie() & 0x00;
+	*((char *)&(user->cookie) + 0) = generate_cookie() & 0xff;
 	*((char *)&(user->cookie) + 1) = generate_cookie() & 0xff;
 	*((char *)&(user->cookie) + 2) = generate_cookie() & 0xff;
 	*((char *)&(user->cookie) + 3) = generate_cookie() & 0xff;
