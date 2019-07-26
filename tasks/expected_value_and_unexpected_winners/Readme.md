@@ -1,3 +1,2 @@
-Просто казино, просто берете и играете. Чтобы чаще побеждать, можно написать мартингейл, с ним флаг получается примерно за 20-30 попыток. 
-Упражнение на реализацию.
-Не мартингейлом доказуемо дольше, но потенциально тоже можно. 
+You obviously know that there are no winning strategy in roulette. Luckily for our greedy flag's manager, nobody will get flag.
+But maybe you should try?
