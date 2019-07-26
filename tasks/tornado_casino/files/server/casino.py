@@ -1,8 +1,6 @@
-from casino_random import *
 from sys import argv
-from random import randint as r
+from random import getrandbits
 
-init_state(r(1,30000))
 flag = 'paseca{d1d_y0u_r34lly_7h1nk_7h47_7h3_m41n_1nc0m3_0f_b335_15_h0n3y?}'
 
 tornado_banner = '''
@@ -62,7 +60,7 @@ while True:
             if user_balance > 0:
                 spin = input(slotmachine_menu)
                 if spin == '$':
-                    state = ret_state()
+                    state = getrandbits(32)
                     try:
                         pff_try = int(input('It will be: '), 16)
                     except:
