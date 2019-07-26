@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{75df0182-dedf-4c0e-999f-6daf072cd77c}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{d2222d76-62c1-4c05-b2c6-ff7222cc3323}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{4d683888-2b24-40fc-a1f6-70a8bfdfc065}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{a13713a3-f008-4c48-99da-f46f44c1eff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{8becb66c-aa3e-418c-84c3-c80be0dc0da0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="honeyback-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="honeyback-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Honey.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="User.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wax.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBlock.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wax.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Honey.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

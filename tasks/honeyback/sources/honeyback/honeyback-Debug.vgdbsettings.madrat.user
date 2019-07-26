@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<VisualGDBUserPreferences xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UserDefinedVariableValues />
+  <DebugPreferences>
+    <CatchpointConfiguration>
+      <Exec>false</Exec>
+      <Fork>false</Fork>
+      <Vfork>false</Vfork>
+      <Syscalls />
+      <CXXCatchpoints />
+    </CatchpointConfiguration>
+    <MaskInterruptsWhileStepping>false</MaskInterruptsWhileStepping>
+    <MemoryWindowPreferences>
+      <MemoryWindowPreferences>
+        <ExpressionHistory>
+          <string>0x00000000084032f0</string>
+          <string>0x00000000084032f0 </string>
+          <string>0x00000000084022f0 </string>
+          <string>0x00000000084022f0</string>
+        </ExpressionHistory>
+        <SymbolicMode>true</SymbolicMode>
+        <TakeAddressMode>true</TakeAddressMode>
+        <Format>
+          <DataWidth>OneByte</DataWidth>
+          <DataFormat>Hexadecimal</DataFormat>
+          <TextFormat>ANSI</TextFormat>
+        </Format>
+        <LiveMemorySettings>
+          <Enabled>false</Enabled>
+          <BreakOnChanges>false</BreakOnChanges>
+          <AutoRefresh>false</AutoRefresh>
+          <RefreshTimeout>0</RefreshTimeout>
+        </LiveMemorySettings>
+        <ShowStatusBar>true</ShowStatusBar>
+        <DisplaySymbols>false</DisplaySymbols>
+      </MemoryWindowPreferences>
+    </MemoryWindowPreferences>
+  </DebugPreferences>
+</VisualGDBUserPreferences>
