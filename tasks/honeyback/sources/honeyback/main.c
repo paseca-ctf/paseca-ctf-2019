@@ -8,9 +8,9 @@
 #include <string.h>
 #include <stdio.h>
 
-long int saved_cookie = 0;
+int saved_cookie = 0;
 
-#define DEBUG 1
+#define DEBUG 0
 #if DEBUG
 	#include "Debug.h"
 #endif
@@ -46,7 +46,7 @@ void print_help_store()
 int main(int argc, const char *argv[])
 {
 	
-#ifdef DEBUG
+#if DEBUG
 	printf("sizeof honey: %lu\n", sizeof(Honey));
 	printf("sizeof wax: %lu\n", sizeof(Wax));
 #endif
@@ -144,7 +144,6 @@ int main(int argc, const char *argv[])
 						exit(2);
 					}
 					user->money -= 4800000;
-					printf("%s", "Congratulations! Here is your flag: ");
 					read_flag();
 					return 0;
 				}
@@ -292,9 +291,9 @@ int main(int argc, const char *argv[])
 					switch (user->items[idx - 1].type)
 					{
 					case WAX:
-						printf("Current description: %s\nEnter new description (1-127): ", ((Wax *)user->items[idx - 1].item)->desc);
-						fgets(choice, 127, stdin);
-						strncpy(((Wax *)(user->items[idx - 1].item))->desc, choice, 127);
+						printf("Current description: %s\nEnter new description (1-85): ", ((Wax *)user->items[idx - 1].item)->desc);
+						fgets(choice, 85, stdin);
+						strncpy(((Wax *)(user->items[idx - 1].item))->desc, choice, 85);
 						break;
 					case HONEY:
 						printf("Current description: %s\nEnter new description (1-63): ", ((Honey *)user->items[idx - 1].item)->desc);

@@ -10,13 +10,13 @@
 #include "Wax.h"
 #include "Honey.h"
 
-extern long int saved_cookie;
+extern int saved_cookie;
 
 typedef struct
 {
-	long int cookie;
-	int money;
+	int cookie;
 	float cashback;
+	int money;
 	char *name;
 	int free_space;
 	ItemBlock items[MAX_ITEMS];

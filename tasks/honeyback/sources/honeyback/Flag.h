@@ -12,7 +12,9 @@ void read_flag()
 	}
 	
 	char chunk[128];
+	printf("%s", "Congratulations! Here is your flag: ");
 	fgets(chunk, sizeof(chunk), fp);
 	fputs(chunk, stdout);
+	puts("");
 	fclose(fp);
 }
