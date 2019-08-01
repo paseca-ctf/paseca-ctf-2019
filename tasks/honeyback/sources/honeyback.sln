@@ -1,0 +1,27 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "honeyback", "honeyback\honeyback.vcxproj", "{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Debug|x64.ActiveCfg = Debug|Win32
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Debug|x86.ActiveCfg = Debug|Win32
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Debug|x86.Build.0 = Debug|Win32
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Release|x64.ActiveCfg = Release|Win32
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Release|x86.ActiveCfg = Release|Win32
+		{D57745FA-2D25-49F7-B9CA-A8E5C7E81763}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E103AA8-9363-4439-81E9-6EBA31B65AE0}
+	EndGlobalSection
+EndGlobal
