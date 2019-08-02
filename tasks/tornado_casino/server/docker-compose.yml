@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  task-tornadocasino:
+    build: .
+    ports:
+    - "25028:1337"
