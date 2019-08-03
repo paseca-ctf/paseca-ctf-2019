@@ -1,11 +1,11 @@
 import time
-from random import randint
 
-a = randint(10**3, 10**5)  # 2416
-c = randint(10**4, 10**6)  # 374441
-m = randint(10**4, 10**8)  # 1771875
+m = 7910033
+a = 84589
+c = 5463313
 
-previous_seed = int(time.time())
+
+previous_seed = int(time.time()) % m
 current_seed = (a * previous_seed + c) % m
 
 
