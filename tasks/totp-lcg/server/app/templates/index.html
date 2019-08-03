@@ -22,14 +22,16 @@
         <div class="columns">
             <div class="column is-4 is-offset-4">
                 <div class="box">
-                    <nav class="level">
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <!-- LCG password -->
-                                <p class="heading">Previous One Time Password</p>
-                                <p id="previous-totp" class="title">LOADING</p>
-                            </div>
-                        </div>
+                    <nav id="prev-passwords" class="panel">
+                        <p class="panel-heading">
+                            Last 5 Passwords
+                        </p>
+                        <!-- LCG passwords -->
+                        <a class="panel-block">LOADING</a>
+                        <a class="panel-block">LOADING</a>
+                        <a class="panel-block">LOADING</a>
+                        <a class="panel-block">LOADING</a>
+                        <a class="panel-block">LOADING</a>
                     </nav>
 
                     <form action="/login" method="post">
@@ -56,19 +58,19 @@
     <script>
         function update_previous_totp()
         {
-            let last_totp = new Request('/last-totp');
+            let last_totps = new Request("/last-totps");
 
-            fetch(last_totp)
+            fetch(last_totps)
                 .then(function(response) { return response.json(); })
                 .then(function(data) {
-                let totp = document.querySelector('#previous-totp');
-                totp.textContent = data['totp'];
+                let totp = document.querySelector("#prev-passwords").querySelectorAll("a");
+                totp.forEach((v, k, p) => v.textContent = data[k]);
             });
         }
         update_previous_totp();
         setInterval(update_previous_totp, 10000);
         {% if error %}
-        setTimeout(()=>document.querySelector('.help').remove(), 5000);
+        setTimeout(()=>document.querySelector(".help").remove(), 5000);
         {% endif %}
     </script>
     {% endblock %}

@@ -10,7 +10,7 @@ from starlette.middleware.authentication import AuthenticationMiddleware
 from starlette.responses import JSONResponse, RedirectResponse
 from starlette.templating import Jinja2Templates
 
-from totp import current_number, next_number, previous_number
+from totp import current_number, next_number, last_numbers
 
 serializer = URLSafeSerializer('5y1HtjHuu2W3wvqVLrNEHKAQz8lfOKL4lbYUP8OksVUMnDnowCWjL6VvAZ4hjvRP')
 templates = Jinja2Templates(directory='templates')
@@ -56,9 +56,9 @@ async def startup():
     loop.create_task(update_totp())
 
 
-@app.route('/last-totp')
+@app.route('/last-totps')
 async def last_otp(request):
-    return JSONResponse({'totp': (previous_number())})
+    return JSONResponse(last_numbers)
 
 
 @app.route('/')
