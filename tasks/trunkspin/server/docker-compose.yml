@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  task-trunkspin:
+    build: .
+    ports:
+    - "25050:1337"
