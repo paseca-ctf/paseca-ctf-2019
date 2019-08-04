@@ -5,7 +5,7 @@ flag = 'b' + 'z'*47
 
 flag_len = 12 * 6
 
-secret_bzzz = 0#bzz?
+secret_bzzz = -1337#bzz?
 
 beehives = [flag[i:i+6][::-1] for i in range(0, flag_len, 6)]
 paseca = [beehives[i:i+3] for i in range(0, len(beehives), 3)]
