@@ -20,6 +20,7 @@ void add_item_honey(User *user, Honey *honey)
 	}
 	else {
 		puts("Not enough space for new item :(\nYou need to sell something. Bzzzzz.\n");
+		fflush(NULL);
 	}
 }
 
@@ -41,6 +42,7 @@ void add_item_wax(User *user, Wax *wax)
 	}
 	else {
 		puts("Not enough space for new item :(\nYou need to sell something. Bzzzzz.\n");
+		fflush(NULL);
 	}
 }
 

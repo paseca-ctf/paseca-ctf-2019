@@ -33,6 +33,7 @@ void free_hook(void *ptr, void *caller)
 
 	// do logging
 	printf("[+] free %p, caller: %p\n", ptr, caller);
+	fflush(NULL);
 
 	// reactivate hooks
 	free_hook_active = 1;

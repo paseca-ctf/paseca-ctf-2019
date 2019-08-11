@@ -17,7 +17,7 @@ typedef struct Wishes
 
 void read_flag()
 {
-    FILE *fp = fopen("./flag.txt", "r");
+    FILE *fp = fopen("/service/flag.txt", "r");
     if (fp == NULL) {
         perror("Unable to open file! Please contact administrator.");
         exit(1);
@@ -27,7 +27,10 @@ void read_flag()
     printf("%s", "Congratulations! Your flag: ");
     fgets(chunk, sizeof(chunk), fp);
     fputs(chunk, stdout);
+    fflush(NULL);
     puts("");
+    fflush(NULL);
+
     fclose(fp);
 }
 
@@ -38,13 +41,18 @@ int main(int argc, const char *argv[])
     wish->wishes_count = 3;
 
     puts("Hi stranger! Im genie. You can make 3 wishes.\nBut real reward can be obtained only after 4 wish...");
+    fflush(NULL);
 
     for (;wish->wishes_count > 0; wish->wishes_count--)
     {
         printf("Wishes left: %u\n", wish->wishes_count);
+        fflush(NULL);
         printf("Write your wish\n> ");
+        fflush(NULL);
+        
         scanf("%25s", wish->buffer);
         printf("Ok, your wish is: %s\n", wish->buffer);
+        fflush(NULL);
 
         cnt++;
         if ((char)wish->wishes_count <= 3 && cnt > 3)
@@ -52,11 +60,10 @@ int main(int argc, const char *argv[])
         else if (cnt > 3)
         {
             puts("Better luck next time...");
+            fflush(NULL);
             break;
         }
     }
-
-
 
     return 0;
 }
