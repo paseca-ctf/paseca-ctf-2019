@@ -6,4 +6,4 @@ services:
     environment:
       - WEB_CONCURRENCY=1
     ports:
-    - "25009:5000"
+    - "25035:5000"
