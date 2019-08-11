@@ -1,0 +1,6 @@
+version: '3'
+services:
+  baby_homo:
+    build: ./
+    ports:
+        - 127.0.0.1:5701:1337
