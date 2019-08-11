@@ -20,7 +20,7 @@ char flag[64];
 
 void read_flag()
 {
-    FILE *fp = fopen("./flag.txt", "r");
+    FILE *fp = fopen("/service/flag.txt", "r");
     if (fp == NULL) {
         perror("Unable to open file! Please contact administrator.");
         exit(1);
@@ -39,13 +39,15 @@ void seccomp_initializer()
 
 void close_fds()
 {
-    // close(0);
+    close(0);
     // close(1);
     // close(2);
 }
 
 int main(int argc, const char *argv[])
 {
+    // setvbuf(0, NULL, _IONBF, NULL);
+
     read_flag();
 
     char *buf = mmap(NULL, 0x1000, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_SHARED|MAP_ANONYMOUS, -1, NULL);
@@ -53,6 +55,8 @@ int main(int argc, const char *argv[])
         exit(1);
 
     puts("Enter your shellcode: ");
+    fflush(NULL);
+
     read(0, buf, 0x1000);
 
     close_fds();

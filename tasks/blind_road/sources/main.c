@@ -24,12 +24,6 @@ __asm__("ret");
 __asm__("add rsi, rdi");
 __asm__("ret");
 
-// __asm__("pop rax");
-// __asm__("ret");
-
-// __asm__("pop rdx");
-// __asm__("ret");
-
 int main() 
 {
     rop_it();
