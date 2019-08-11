@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  bee-recognition:
+    build: .
+    environment:
+      - WEB_CONCURRENCY=1
+    ports:
+    - "25035:5000"

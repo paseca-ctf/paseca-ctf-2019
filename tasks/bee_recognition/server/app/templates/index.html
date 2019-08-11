@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+        <title>Bee recognition</title>
+        <style>
+            @font-face {
+                font-family: 'TTPolls';
+                font-weight: 400;
+                src: url('../static/fonts/TTPolls-Regular.woff') format('woff');
+            }
+
+            @font-face {
+                font-family: 'TTPolls';
+                font-weight: 600;
+                src: url('../static/fonts/TTPolls-Bold.woff') format('woff');
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'TTPolls';
+            }
+
+            body {
+                background: #151515;
+                height: 100%;
+            }
+
+            #container {
+                position: fixed;
+                width: 340px;
+                height: auto;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            p {
+                display: block;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                color: #e8c73c;
+                font-weight: 600;
+                font-size: 40px;
+                padding-bottom: 10px;
+            }
+
+            #tiny-cute-bee-image {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: auto;
+                background-color: #151515;
+                border-radius: 5px;
+                box-shadow: 0 0 30px black;
+                overflow: hidden;
+                margin-bottom: 20px;
+            }
+
+            #buttons {
+                z-index: 1;
+                width: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .button {
+                border: none;
+                background: #e8c73c;
+                height: 40px;
+                border-radius: 5px;
+                padding: 0 10px;
+                color: #151515;
+                cursor: pointer;
+                font-size: 18px;
+                line-height: 40px;
+                width: 100px;
+                text-align: center;
+            }
+
+            .button:hover {
+                background: #bea332;
+            }
+
+            form {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='container'>
+            <p>What bee is it?</p>
+            <img id='tiny-cute-bee-image'>
+            <div id='buttons'>
+                <button class='button' value='0'>Carniolan</button>
+                <button class='button' value='1'>Russian</button>
+                <button class='button' value='2'>Italian</button>
+            </div>
+            <form id='form' method='post' accept-charset='utf-8' autocomplete='off' role='form'>
+                <input type='hidden' id='answers' name='answers' value=''>
+            </form>
+        </div>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script>
+            var bee_ids = {{ bee_ids }};
+            var answers = [];
+            const container = $('#container');
+            const bee_img = $('#tiny-cute-bee-image');
+
+            $(function() {
+                var bee_id = 0;
+
+                function updateBee() {
+                    if(bee_id === 200) {
+                        $('#form').submit();
+                        return;
+                    }
+
+                    bee_img.attr('src', `../static/img/${bee_ids[bee_id]}.png`);
+                }
+
+                $('#form').submit(function() {
+                    $('#answers').val(JSON.stringify(answers));
+                    return true;
+                });
+
+                $('.button').click(function() {
+                    answers.push($(this).val());
+                    bee_id++;
+                    updateBee();
+                });
+
+                updateBee();
+            });
+        </script>
+    </body>
+</html>
