@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
 
+RUN apk add --no-cache socat
 COPY ./service /service
-RUN apk add socat
-CMD chmod +x /service/deploy.sh && /service/deploy.sh
+CMD sh /service/deploy.sh
