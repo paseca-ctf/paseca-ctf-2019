@@ -14,7 +14,7 @@ def mainloop():
 		(sh.readline())
 		sh.readuntil('?\n')
 		sh.sendline('flag')
-		print sh.readline().strip(),maxbet
+		print(sh.readline().strip(),maxbet)
 		quit()
 	sh.sendline('1')
 	sh.readuntil('36.\n')
