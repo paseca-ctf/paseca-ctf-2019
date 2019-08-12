@@ -4,7 +4,7 @@
 
 import random
 
-flag = 'paseca{d1d_th1s_t4st_mak3_y0u_angr9}'
+flag = 'paseca{d1d_th1s_t4sk_mak3_y0u_angr9}'
 
 c_template = '''int check{}(char chr) // valid: {}
 {{
