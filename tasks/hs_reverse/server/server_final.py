@@ -117,7 +117,7 @@ def main():
 			conn.close()
 
 if __name__ == "__main__":
-	#try:
-	main()
-	#except:
-		#print('[!] Something went wrong.')
+	try:
+		main()
+	except:
+		print('[!] Something went wrong.')
