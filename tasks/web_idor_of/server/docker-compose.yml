@@ -3,7 +3,7 @@ services:
     idor_of:
         build: ./
         ports:
-            - 2280:80
+            - 25041:80
     mysql:
         build: ./mysql
         volumes:
