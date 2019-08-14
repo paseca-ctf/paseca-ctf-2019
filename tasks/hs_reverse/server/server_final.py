@@ -1,16 +1,15 @@
-import socket
-from pprint import pprint
+import socket, threading
 
 version = '15.0.0.0'
 game_handle = 1
 password = 'paseca'
 
 flag = 'paseca{m3nt4l_d3pr3551ion_w4s_us3d_t0_m4k3_th15_t45k}'
-flag_enc = ''.join(chr(int(x)) for x in ''.join(format(ord(e), 'b') for e in flag))
+flag_enc = ''.join(chr(int(x)) for x in ''.join(format(ord(e), '08b') for e in flag))
 
 sock = socket.socket()
-sock.bind(('127.0.0.1', 1337))
-sock.listen(1)
+sock.bind(('0.0.0.0', 1337))
+sock.listen(228)
 
 def shutdown(reason, conn):
 	print('[!] ', reason)
@@ -91,33 +90,42 @@ def parse_handshake(conn):
 	else:
 		shutdown('Unsupported packet type', conn)
 
+def new_client_crutch(conn):
+	try:
+		new_client(conn)
+	except:
+		shutdown('Parse error', conn)
+
+def new_client(conn):
+	hs_data = parse_handshake(conn)
+
+	if hs_data == None:
+		return
+	print(hs_data)
+
+	if verify_handshake(hs_data):
+		print('[*] Handshake success')
+
+		conn.send(b'\x10\x00\x00\x00\x0e\x00\x00\x00\x08\x49\x10\x05\x18\x05\x20\x01\x28\x07\x30\x05\x38\x19')
+		data = conn.recv(8)
+
+		if data == b'\x73\x00\x00\x00\x00\x00\x00\x00':
+			conn.send(b'\x74' + b'\x00'*7)
+
+			data = conn.recv(8)
+			if data == b'\x01\x00\x00\x00\x00\x00\x00\x00':
+				conn.send(flag_enc.encode('ascii'))
+				conn.close()
+				print('[*] Flag sent!')
+
+	else:
+		shutdown('Parse error', conn)
+
 def main():
 	while True:
 		conn, addr = sock.accept()
-
-		hs_data = parse_handshake(conn)
-		if hs_data == None:
-			return
-		pprint(hs_data)
-		if verify_handshake(hs_data):
-			print('[*] Handshake success')
-			conn.send(b'\x10\x00\x00\x00\x0e\x00\x00\x00\x08\x49\x10\x05\x18\x05\x20\x01\x28\x07\x30\x05\x38\x19')
-
-			data = conn.recv(8)
-			if data == b'\x73\x00\x00\x00\x00\x00\x00\x00':
-				conn.send(b'\x74' + b'\x00'*7)
-				data = conn.recv(8)
-				if data == b'\x01\x00\x00\x00\x00\x00\x00\x00':
-					conn.send(flag_enc.encode('ascii'))
-					conn.close()
-					print('[*] Flag sent!')
-
-		else:
-			print('[!] Fake packet or wrong credentials')
-			conn.close()
+		thr = threading.Thread(target=new_client_crutch, args=(conn,))
+		thr.start()
 
 if __name__ == "__main__":
-	try:
-		main()
-	except:
-		print('[!] Something went wrong.')
+	main()
