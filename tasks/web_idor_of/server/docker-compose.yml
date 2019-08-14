@@ -1,0 +1,15 @@
+version: '3'
+services:
+    idor_of:
+        build: ./
+        ports:
+            - 2280:80
+    mysql:
+        build: ./mysql
+        volumes:
+            - mysqlvol:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: p4s3c4
+            MYSQL_DATABASE: paseca
+volumes:
+    mysqlvol:
