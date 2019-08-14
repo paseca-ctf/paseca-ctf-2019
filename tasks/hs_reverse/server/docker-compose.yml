@@ -3,4 +3,4 @@ services:
   hs_reverse:
     build: ./
     ports:
-        - 1338:1337
+        - 25043:1337
