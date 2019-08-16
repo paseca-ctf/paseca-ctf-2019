@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Honey Shop</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="nav">
+    <div class="container">
+        <a class="navbar-brand" href="#">The Honey Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <h3 class="my-4">Your cart: ${{ balance }}</h3>
+            <h4>{{ msg }}</h4>
+            {% if purchases %}
+                <h4>You recently bought:</h4>
+            {% endif %}
+            {% for p in purchases %}
+
+                <div class="list-group">
+                    <p id='lg' class="list-group-item">{{ p }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+            <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+
+                        <form action="/download" method="get">
+                            <button type="submit" class="btn btn-primary" name="image" value="1.jpg" id="nav">
+                                <img class="d-block img-fluid" src="../static/images/1.jpg" alt="First slide">
+                            </button>
+                        </form>
+                    </div>
+                    <div class="carousel-item">
+                        <form action="/download" method="get">
+                            <button type="submit" class="btn btn-primary" name="image" value="2.jpg" id="nav">
+                                <img class="d-block img-fluid" src="../static/images/2.jpg" alt="First slide">
+                            </button>
+                        </form>
+                    </div>
+                    <div class="carousel-item">
+                        <form action="/download" method="get">
+                            <button type="submit" class="btn btn-primary" name="image" value="3.jpg" id="nav">
+                                <img class="d-block img-fluid" src="../static/images/3.jpg" alt="First slide">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="../static/images/honey-1.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">Linden honey</a>
+                            </h4>
+                            <h5>$5</h5>
+                            <p class="card-text">Lime white honey is gaining popularity, capturing people with its
+                                fragrant aroma and specific taste. Minty and slightly bitter spicing up.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
+
+                            <form action="" method="post">
+                                <button type="submit" class="btn btn-primary" name="item" value="1" id="nav">Buy
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="../static/images/honey-2.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">Acacia honey</a>
+                            </h4>
+                            <h5>$10</h5>
+                            <p class="card-text">Transparent, and in contact with even a small amount of other varieties
+                                becomes light color. Very sweet, viscous.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <form action="" method="post">
+                                <button type="submit" class="btn btn-primary" name="item" value="2" id="nav">Buy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="../static/images/honey-3.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">Buckwheat honey</a>
+                            </h4>
+                            <h5>$12</h5>
+                            <p class="card-text">One of the best high-grade honey. Dark shades are usually brown.
+                                Buckwheat honey has a fragrant aroma and a sharp taste, specifically pulls the
+                                throat.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
+                            <form action="" method="post">
+                                <button type="submit" class="btn btn-primary" name="item" value="3" id="nav">Buy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="../static/images/honey-4.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">Herbs honey</a>
+                            </h4>
+                            <h5>$15</h5>
+                            <p class="card-text">This honey is rich in antioxidants, natural enzymes, unique amino
+                                acids,
+                                which are so necessary for a person.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
+                            <form action="" method="post">
+                                <button type="submit" class="btn btn-primary" name="item" value="4" id="nav">Buy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="#"><img class="card-img-top" src="../static/images/honey-5.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="#">Flag honey</a>
+                            </h4>
+                            <h5>$1337</h5>
+                            <p class="card-text">Most important honey for you today!</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                            <form action="" method="post">
+                                <button type="submit" class="btn btn-primary" name="item" value="5" id="nav">Buy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5" id="nav">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; PASECA 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../static/vendor/jquery/jquery.min.js"></script>
+<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
