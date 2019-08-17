@@ -1,6 +1,6 @@
 # Total Recall
 ### Ready dump link
-(Download)[]
+[Download]()
 ## Tear up
 * Get Windows 10 vm
 * Download Python 3 and [Belkasoft Live RAM Caputer](https://belkasoft.com/ram-capturer), install them, reboot
@@ -10,4 +10,12 @@
 * Encrypt several times
 * Dump it
 
+## How to solve/check:
+* Get script from dump
+* Get encrypted pic from backup
+* Write script similiar to [solver.py](solver/solver.py)
+Or you can check [solver.py](solver/solver.py) and [enc_pic](solver/enc_pic): `python3 solver.py enc_pic PNG`
+
+
+#### P.S.
 > I da, eto ne ya anglichanin, a shrifty russkie v arche sleteli
