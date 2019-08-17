@@ -22,7 +22,7 @@ if(isset($_POST['al']) && $_POST['al'] === 1){
 			echo '{"error": 20, "error_text": "Access Denied"}';
 		} else {
 			$pid = $_POST['pid'];
-			$item = $pdo->prepare('SELECT src FROM img WHERE id = MOD(CAST(? AS UNSIGNED), CAST(? AS UNSIGNED))');
+			$item = $pdo->prepare('SELECT src FROM img WHERE id = MOD(CAST(? AS UNSIGNED), CAST(? AS UNSIGNED) + 1)');
 			$item->execute(array($pid, PHP_INT_MAX));
 			
 			$data = $item->fetchAll();
