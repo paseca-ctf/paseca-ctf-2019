@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['al']) && $_POST['al'] === 1){
+if(isset($_POST['al']) && (int)$_POST['al'] === 1){
     $host = 'mysql';
     $db   = 'paseca';
     $user = 'root';
