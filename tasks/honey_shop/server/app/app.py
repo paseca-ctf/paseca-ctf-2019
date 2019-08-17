@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, escape, send_file
+from flask import Flask, render_template, request, session, escape, send_file, make_response
 
 import config
 
@@ -51,17 +51,15 @@ def download():
     try:
         path = f"/home/shop/{request.args.get('image')}"
 
-        if path.endswith('flag.txt') or path.endswith('app.py'):
+        if path.endswith('flag.txt') or path.endswith('.py') or path.endswith('.pyc'):
             return 'Not allowed'
 
-        if 'cmdline' in path or 'environ' in path:
-            template = open(path).read()
-            return template
+        resp = make_response(open(path, 'rb').read())
+        resp.headers['Content-Disposition'] = 'attachment; filename="' + path.split('/')[-1] + '"'
+        return resp
 
-        return send_file(path, as_attachment=True)
-
-    except Exception as e:
-        pass
+    except Exception:
+        return 'Unknown Error'
 
 
 if __name__ == '__main__':
