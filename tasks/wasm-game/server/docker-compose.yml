@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  task-wasm:
+    build: .
+    ports:
+    - "25045:80"
