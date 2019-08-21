@@ -7,4 +7,9 @@ services:
       - WEB_CONCURRENCY=1
       - SECRET_KEY=T6D_?Bhh]Dt_}*3uK)!4UkJObT}T-7ztv]Wg_vlPF9aUa!Pj#r
     ports:
-    - "25068:5000"
+      - "127.0.0.1:25068:5000"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 256M
