@@ -1,7 +1,7 @@
 ## Название
 Maximillian Marafonchenko
 ## Описание/Легенда
-Someone threw a rock to our apiary. Surprisingly, this rock was a flash USB drive, containing that single file. Got a bucket of chicken. Let's... Ehm, what?
+Someone threw a rock to our apiary. Surprisingly, this rock was a flash USB drive containing that single file. Got a bucket of chicken. Let's... Ehm, what?
 ## Решение
 1) Усмотреть заголовок vtf - это valve texture file
 2) Нагуглить VTFLib или VTFEdit (лучше второе ибо первое это тупо либа)\
