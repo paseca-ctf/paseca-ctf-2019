@@ -1,0 +1,10 @@
+bee_recognition http://5.200.53.16:24035
+honey_shop http://5.200.53.16:24068
+hs_reverse nc 5.200.53.16 24043
+expected_value_and_unexpected_winners nc 5.200.53.16 24031
+secrets_store nc 5.200.53.16 24016
+tornado_casino nc 5.200.53.16 24028
+totp-lgc http://5.200.53.16:24003
+trunkspin http://5.200.53.16:24050
+weak_hellman nc 5.200.53.16 25004
+web_idor_of http://5.200.53.16:24041

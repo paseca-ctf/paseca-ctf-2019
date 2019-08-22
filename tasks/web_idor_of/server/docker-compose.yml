@@ -3,7 +3,14 @@ services:
     idor_of:
         build: ./
         ports:
-            - 25041:80
+            - 127.0.0.1:25041:80
+        deploy:
+          resources:
+            limits:
+              cpus: '0.4'
+              memory: 64M
+        depends_on:
+            - mysql
     mysql:
         build: ./mysql
         volumes:
@@ -11,5 +18,10 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: p4s3c4
             MYSQL_DATABASE: paseca
+        deploy:
+          resources:
+            limits:
+              cpus: '0.4'
+              memory: 256M
 volumes:
     mysqlvol:

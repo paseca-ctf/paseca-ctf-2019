@@ -4,4 +4,9 @@ services:
   task-hellman:
     build: .
     ports:
-    - "25004:25004"
+        - "127.0.0.1:25004:25004"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 128M

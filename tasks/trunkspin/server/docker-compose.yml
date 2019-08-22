@@ -4,4 +4,9 @@ services:
   task-trunkspin:
     build: .
     ports:
-    - "25050:1337"
+        - "127.0.0.1:25050:1337"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 64M

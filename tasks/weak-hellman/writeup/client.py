@@ -19,7 +19,7 @@ async def send_str(data, key, writer):
 
 async def client(loop):
 
-    reader, writer = await asyncio.open_connection('192.168.99.100', 25004,
+    reader, writer = await asyncio.open_connection('5.200.53.16', 24004,
                                                    loop=loop)
 
     writer.write('baraban'.encode())
