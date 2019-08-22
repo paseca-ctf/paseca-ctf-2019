@@ -4,6 +4,11 @@ services:
   bee-recognition:
     build: .
     environment:
-      - WEB_CONCURRENCY=1
+      - WEB_CONCURRENCY=4
     ports:
-    - "25035:5000"
+        - "127.0.0.1:25035:5000"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 128M

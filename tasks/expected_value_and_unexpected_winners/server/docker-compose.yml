@@ -4,4 +4,9 @@ services:
   task-expected:
     build: .
     ports:
-    - "25031:1337"
+        - "127.0.0.1:25031:1337"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 128M
