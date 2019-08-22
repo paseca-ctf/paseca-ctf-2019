@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  task-franklinreiter:
+    build: .
+    ports:
+    - "25075:1337"
