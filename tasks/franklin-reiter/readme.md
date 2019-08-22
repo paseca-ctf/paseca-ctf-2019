@@ -1,5 +1,6 @@
 ## Легенда
 CTF is not CTF without far-fetched RSA task.
+nc task.pase.ca 27075
 ## Описание
 RSA сервис где можно только шифровать. Есть паддинг в виде множителя модуля.
 ## Решение
