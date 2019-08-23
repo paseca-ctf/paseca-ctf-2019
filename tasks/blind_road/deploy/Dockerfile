@@ -1,6 +1,11 @@
-FROM ubuntu:16.04
+FROM debian:9-slim
+
+RUN apt-get update && \
+    apt-get --assume-yes --no-install-recommends install socat firejail && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./service /service
-RUN apt-get update && apt-get --assume-yes install socat
-RUN chmod +x /service/deploy.sh
-CMD socat TCP-LISTEN:1337,reuseaddr,fork EXEC:/service/blind_road
+RUN chmod +x /service/blind_road
+
+CMD sh /service/deploy.sh
