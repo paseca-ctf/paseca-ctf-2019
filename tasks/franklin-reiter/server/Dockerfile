@@ -7,4 +7,4 @@ RUN apk add --no-cache --virtual build-dep python-dev build-base gmp-dev mpfr-de
 
 COPY ./service/server.py .
 
-CMD ["socat", "TCP-LISTEN:1337,fork,reuseaddr", "EXEC:'python3 server.py'"]
+CMD ["socat", "TCP-LISTEN:1337,fork,reuseaddr,su:nobody", "EXEC:'python3 server.py'"]
