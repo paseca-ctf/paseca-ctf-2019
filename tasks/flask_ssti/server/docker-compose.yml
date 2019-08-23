@@ -3,4 +3,4 @@ services:
   gen:
     build: .
     ports:
-    - "2282:5000"
+    - "25074:5000"
