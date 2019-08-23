@@ -4,4 +4,4 @@ services:
   task-franklinreiter:
     build: .
     ports:
-    - "25075:1337"
+        - "127.0.0.1:25075:1337"
