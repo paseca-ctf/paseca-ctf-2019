@@ -1,15 +1,38 @@
-bee_recognition http://task.pase.ca:24035
-honey_shop http://task.pase.ca:24068
-hs_reverse nc task.pase.ca 24043
-expected_value_and_unexpected_winners nc task.pase.ca 24031
-secrets_store nc task.pase.ca 24016
-tornado_casino nc task.pase.ca 24028
-totp-lgc http://task.pase.ca:24003
-trunkspin http://task.pase.ca:24050
-weak_hellman nc task.pase.ca 25004
-web_idor_of http://task.pase.ca:24041
-flask_ssti http://task.pase.ca:24074
-genie nc task.pase.ca 24051
-honeyback (NOT TESTED EXPLOIT RETARDED) nc task.pase.ca 24027
-noout nc task.pase.ca 24055
-blindroad (NOT TESTED TASK RETARDED) nc task.pase.ca 24099
+baby_homo
+bee_recognition
+    http://task.pase.ca:24035
+blind_road
+    (NOT TESTED TASK RETARDED) nc task.pase.ca 24099
+el_accordion
+    nc task.pase.ca 24011
+expected_value_and_unexpected_winners
+    nc task.pase.ca 24031
+fake_admin
+flask_ssti
+    problem (wget && network not present)
+    http://task.pase.ca:24074
+franklin-reiter
+genie
+    nc task.pase.ca 24051
+hidden_malware
+honeyback
+    (NOT TESTED EXPLOIT RETARDED) nc task.pase.ca 24027
+honey_shop
+    http://task.pase.ca:24068
+hs_reverse
+    nc task.pase.ca 24043
+no_out
+    nc task.pase.ca 24055
+secrets_storage
+    nc task.pase.ca 24016
+tornado_casino
+    nc task.pase.ca 24028
+totp-lcg
+    http://task.pase.ca:24003
+trunkspin
+    http://task.pase.ca:24050
+wasm-game
+weak-hellman
+    nc task.pase.ca 25004
+web_idor_of
+    http://task.pase.ca:24041
