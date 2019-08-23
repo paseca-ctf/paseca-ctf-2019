@@ -1,0 +1,6 @@
+version: '3'
+services:
+  gen:
+    build: .
+    ports:
+    - "2282:5000"
