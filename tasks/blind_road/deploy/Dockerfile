@@ -1,4 +1,4 @@
-FROM debian:9-slim
+FROM ubuntu:16.04
 
 RUN apt-get update && \
     apt-get --assume-yes --no-install-recommends install socat && \

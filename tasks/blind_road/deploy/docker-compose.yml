@@ -26,7 +26,7 @@ services:
     build: ./haproxy
     restart: on-failure
     ports:
-        - 25074:1337
+        - 25099:1337
     networks:
         - no-internet
         - internet
