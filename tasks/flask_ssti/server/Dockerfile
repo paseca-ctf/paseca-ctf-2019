@@ -6,4 +6,6 @@ RUN pip install -r app/requirements.txt
 
 USER nobody:nogroup
 
-CMD python app/app.py
+WORKDIR /app
+
+CMD python app.py

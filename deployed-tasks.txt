@@ -1,4 +1,3 @@
-baby_homo
 bee_recognition
     http://task.pase.ca:24035
 blind_road
@@ -11,7 +10,6 @@ fake_admin
     (NOT TESTED EXPLOIT RETARDED)
     nc task.pase.ca 24081 
 flask_ssti
-    problem (wget && network not present)
     http://task.pase.ca:24074
 franklin-reiter
     nc task.pase.ca 24075
