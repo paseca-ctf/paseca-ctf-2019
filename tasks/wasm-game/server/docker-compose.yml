@@ -4,4 +4,4 @@ services:
   task-wasm:
     build: .
     ports:
-    - "25045:80"
+        - "127.0.0.1:25045:80"
