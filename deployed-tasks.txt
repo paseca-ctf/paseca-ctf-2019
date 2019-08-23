@@ -8,3 +8,6 @@ totp-lgc http://5.200.53.16:24003
 trunkspin http://5.200.53.16:24050
 weak_hellman nc 5.200.53.16 25004
 web_idor_of http://5.200.53.16:24041
+flask_ssti http://5.200.53.16:24074
+genie nc 5.200.53.16 24051
+honeyback (NOT TESTED EXPLOIT RETARDED) nc 5.200.53.16 24027
