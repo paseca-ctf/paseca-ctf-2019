@@ -4,4 +4,6 @@ COPY ./app /app
 
 RUN pip install -r app/requirements.txt
 
+USER nobody:nogroup
+
 CMD python app/app.py
