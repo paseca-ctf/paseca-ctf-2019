@@ -13,6 +13,10 @@ from flask import (
 import config
 from data import *
 
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
+
 app = Flask(__name__)
 app.config.from_object(config)
 K = 200
@@ -44,7 +48,6 @@ def count_score(ans):
 
     for k, v in ans.items():
         score += int(answers[str(k) + '.png']) == int(v)
-        print(answers[str(k) + '.png'], v)
 
     return score
 
@@ -52,10 +55,8 @@ def count_score(ans):
 @app.route('/')
 def index():
     user_id = session.get('user_id')
-    print(user_id)
 
     if not user_id:
-        print('AAAA')
         uuid = str(uuid4())
         bees_ids = get_bees_ids()
         session['user_id'] = uuid
@@ -81,12 +82,14 @@ def post():
 
         ans = dict(zip(list(bees_ids), ans))
         score = count_score(ans)
-
         accuracy = score / K * 100
+
+        print('NEW SOLVE!!!', user_id + ' ' + str(accuracy))
+
         if accuracy >= 85:
             return jsonify({'success': True, 'accuracy': f'{accuracy}%', 'flag': FLAG})
         else:
-            return jsonify({'success': False, 'accuracy': f'{accuracy}%', 'error': 'Accuracy is too low'})
+            return jsonify({'success': False, 'accuracy': f'__%', 'error': 'Accuracy is too low'})
 
 
     except Exception as e:
