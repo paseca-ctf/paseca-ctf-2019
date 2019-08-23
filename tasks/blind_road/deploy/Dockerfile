@@ -1,7 +1,7 @@
 FROM debian:9-slim
 
 RUN apt-get update && \
-    apt-get --assume-yes --no-install-recommends install socat firejail && \
+    apt-get --assume-yes --no-install-recommends install socat && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

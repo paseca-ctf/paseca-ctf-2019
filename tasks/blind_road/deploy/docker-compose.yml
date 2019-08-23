@@ -3,7 +3,6 @@ version: "3.3"
 services:
   service:
     build: .
-    user: nobody:nogroup
     restart: on-failure
     read_only: true
     shm_size: 16
@@ -26,7 +25,7 @@ services:
     build: ./haproxy
     restart: on-failure
     ports:
-        - 25048:25048
+        - 25048:1337
     networks:
         - no-internet
         - internet
