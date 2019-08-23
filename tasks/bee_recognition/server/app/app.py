@@ -86,7 +86,7 @@ def post():
 
         print('NEW SOLVE!!!', user_id + ' ' + str(accuracy))
 
-        if accuracy >= 85:
+        if accuracy > 90:
             return jsonify({'success': True, 'accuracy': f'{accuracy}%', 'flag': FLAG})
         else:
             return jsonify({'success': False, 'accuracy': f'__%', 'error': 'Accuracy is too low'})
