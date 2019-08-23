@@ -1,13 +1,14 @@
-bee_recognition http://5.200.53.16:24035
-honey_shop http://5.200.53.16:24068
-hs_reverse nc 5.200.53.16 24043
-expected_value_and_unexpected_winners nc 5.200.53.16 24031
-secrets_store nc 5.200.53.16 24016
-tornado_casino nc 5.200.53.16 24028
-totp-lgc http://5.200.53.16:24003
-trunkspin http://5.200.53.16:24050
-weak_hellman nc 5.200.53.16 25004
-web_idor_of http://5.200.53.16:24041
-flask_ssti http://5.200.53.16:24074
-genie nc 5.200.53.16 24051
-honeyback (NOT TESTED EXPLOIT RETARDED) nc 5.200.53.16 24027
+bee_recognition http://task.pase.ca:24035
+honey_shop http://task.pase.ca:24068
+hs_reverse nc task.pase.ca 24043
+expected_value_and_unexpected_winners nc task.pase.ca 24031
+secrets_store nc task.pase.ca 24016
+tornado_casino nc task.pase.ca 24028
+totp-lgc http://task.pase.ca:24003
+trunkspin http://task.pase.ca:24050
+weak_hellman nc task.pase.ca 25004
+web_idor_of http://task.pase.ca:24041
+flask_ssti http://task.pase.ca:24074
+genie nc task.pase.ca 24051
+honeyback (NOT TESTED EXPLOIT RETARDED) nc task.pase.ca 24027
+noout nc task.pase.ca 24055
