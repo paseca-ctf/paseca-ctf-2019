@@ -21,7 +21,6 @@ services:
         soft: 128
         hard: 128
 
-
   haproxy:
     build: ./haproxy
     restart: on-failure
