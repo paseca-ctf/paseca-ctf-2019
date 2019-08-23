@@ -1,0 +1,7 @@
+version: "2.0"
+
+services:
+  task-expected:
+    build: .
+    ports:
+    - "25081:1337"
