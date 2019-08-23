@@ -20,6 +20,8 @@ services:
       nofile:
         soft: 128
         hard: 128
+    tmpfs:
+      - /tmp
 
   haproxy:
     build: ./haproxy
