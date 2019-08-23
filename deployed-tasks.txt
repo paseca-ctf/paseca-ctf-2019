@@ -17,7 +17,6 @@ franklin-reiter
     nc task.pase.ca 24075
 genie
     nc task.pase.ca 24051
-hidden_malware
 honeyback
     (NOT TESTED EXPLOIT RETARDED) nc task.pase.ca 24027
 honey_shop
@@ -35,6 +34,7 @@ totp-lcg
 trunkspin
     http://task.pase.ca:24050
 wasm-game
+    http://task.pase.ca:24045/
 weak-hellman
     nc task.pase.ca 25004
 web_idor_of
