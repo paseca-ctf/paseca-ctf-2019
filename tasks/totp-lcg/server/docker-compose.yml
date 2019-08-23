@@ -6,7 +6,7 @@ services:
     environment:
       - WEB_CONCURRENCY=1
     ports:
-        - "25003:80"
+        - "127.0.0.1:25003:80"
     deploy:
       resources:
         limits:
