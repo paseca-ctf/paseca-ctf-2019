@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        * {
+            font-family: "Open Sans", Arial, Helvetica, Sans-Serif;
+        }
+        #map {
+            position: relative;
+            zoom: 0.7;
+        }
+
+        #map input {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+        }
+
+        #map input.start {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome to <span style="color: red">Xednay</span>.Metro worker's panel.</h1>
+<div>Please calculate time to get from {{ n }} to all other stations</div>
+<form id="task">
+    <div>Tasks left until freedom: {{ config["N_TASKS"] - session["solved"] }}</div>
+    <div>Current task: {{ session["cur_task"] }}</div>
+    <div id="map">
+        <img src="{{ url_for("return_task", id=session["cur_task"]) }}">
+        {% for n, p in pos.items() %}
+            <input name="{{ n }}" style="top: {{ -p[1]*1540+1725 }}px; left: {{ p[0]*1217+1594 }}px" {% if n == start %}class="start" value="0" disabled{% endif %}>
+        {% endfor %}
+    </div>
+</form>
+</body>
+</html>
