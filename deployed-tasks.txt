@@ -41,3 +41,5 @@ weak-hellman
     nc task.pase.ca 25004
 web_idor_of
     http://task.pase.ca:24041
+web_race_condition
+    http://task.pase.ca:24065

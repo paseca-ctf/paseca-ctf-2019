@@ -3,7 +3,7 @@ services:
     rc_timeh:
         build: ./
         ports:
-            - 24065:80
+            - 127.0.0.1:25065:80
     mysql:
         build: ./mysql
         volumes:

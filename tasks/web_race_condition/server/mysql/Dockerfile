@@ -1,3 +1,3 @@
-FROM mariadb:10.4.7
+FROM yobasystems/alpine-mariadb
 
 COPY app.sql /docker-entrypoint-initdb.d
