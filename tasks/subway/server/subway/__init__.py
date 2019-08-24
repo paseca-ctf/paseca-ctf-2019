@@ -5,10 +5,12 @@ import os
 import matplotlib
 matplotlib.use('Agg')
 
+secret_path = "/var/subway/.secret"
+
 app = Flask(__name__)
-if not os.path.exists(".secret"):
-    open("/var/subway/.secret", "wb").write(secrets.token_bytes(16))
-app.config["SECRET_KEY"] = open("/var/subway/.secret", "rb").read()
+if not os.path.exists(secret_path):
+    open(secret_path, "wb").write(secrets.token_bytes(16))
+app.config["SECRET_KEY"] = open(secret_path, "rb").read()
 app.config["N_TASKS"] = 5
 app.config["SVG_DIR"] = posixpath.abspath(posixpath.join(posixpath.curdir, "tasks"))
 

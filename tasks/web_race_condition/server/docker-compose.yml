@@ -4,6 +4,8 @@ services:
         build: ./
         ports:
             - 127.0.0.1:25065:80
+        environment:
+            - FPM_PM_MAX_CHILDREN=32
     mysql:
         build: ./mysql
         volumes:
