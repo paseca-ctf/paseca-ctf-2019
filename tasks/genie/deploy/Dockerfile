@@ -8,4 +8,4 @@ RUN apt-get update && \
 COPY ./service /service
 RUN chmod a+x /service/genie
 
-CMD socat TCP-LISTEN:1337,reuseaddr,fork EXEC:/service/genie
+CMD socat TCP-LISTEN:1337,reuseaddr,fork,su:nobody EXEC:/service/genie
