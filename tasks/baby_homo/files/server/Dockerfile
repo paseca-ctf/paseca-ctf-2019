@@ -1,8 +1,8 @@
-FROM python:3-alpine
+FROM python:3.7-alpine
 
 COPY requirements.txt ./
 
-RUN apk add --no-cache --virtual build-dep python-dev build-base gmp-dev mpfr-dev mpc1-dev \
+RUN apk add --no-cache --virtual build-dep python3-dev build-base gmp-dev mpfr-dev mpc1-dev \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del build-dep \
     && apk add --no-cache socat gmp mpfr3 mpc1

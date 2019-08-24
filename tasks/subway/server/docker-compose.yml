@@ -3,7 +3,12 @@ services:
   subway:
     build: ./
     ports:
-        - 20080:80
-    volumes:
-        - "./:/var/subway"
+        - 127.0.0.1:25080:1337
     restart: always
+    volumes:
+        - taskdata:/var/subway
+        - tasks:/etc/subway/tasks
+
+volumes:
+    taskdata:
+    tasks:
