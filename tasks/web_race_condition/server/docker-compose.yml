@@ -1,0 +1,15 @@
+version: '3'
+services:
+    rc_timeh:
+        build: ./
+        ports:
+            - 24065:80
+    mysql:
+        build: ./mysql
+        volumes:
+            - mysqlvol2:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: p4s3ca
+            MYSQL_DATABASE: paseca
+volumes:
+    mysqlvol2:
