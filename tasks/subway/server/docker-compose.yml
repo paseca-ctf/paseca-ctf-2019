@@ -1,0 +1,9 @@
+version: '3'
+services:
+  subway:
+    build: ./
+    ports:
+        - 20080:80
+    volumes:
+        - "./:/var/subway"
+    restart: always

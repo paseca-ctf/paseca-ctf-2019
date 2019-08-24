@@ -1,0 +1,6 @@
+pandas
+numpy
+networkx
+matplotlib
+flask
+gunicorn
