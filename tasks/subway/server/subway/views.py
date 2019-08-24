@@ -5,7 +5,7 @@ from subway.gen_graph import gen_task
 import json
 
 tasks = [[2]*3, [3]*7, [5]*7, [11]*13, [15]*17]
-tasks = [[15]*17]
+#tasks = [[15]*17]
 
 @app.route('/tasks/<id>')
 def return_task(id):
