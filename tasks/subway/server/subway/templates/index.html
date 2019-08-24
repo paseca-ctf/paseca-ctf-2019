@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <style>
+        * {
+            font-family: "Open Sans", Arial, Helvetica, sans-serif;
+        }
+        #map {
+            position: relative;
+        }
+
+        #map input {
+            position: absolute;
+            width: 24px;
+            height: 14px;
+            opacity: 0.8;
+        }
+
+        #map input.start {
+            background: red;
+        }
+
+        #map img {
+            width: 2000px;
+            height: 2000px;
+        }
+    </style>
+    <title>Xednay.Metro worker's panel+</title>
+</head>
+<body>
+<h1>Welcome to <span style="color: red">Xednay</span>.Metro worker's panel.</h1>
+<div>Please calculate time to get from {{ start }} to all other stations</div>
+{% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
+<form id="task" action="/" method="post">
+    <div>Tasks left until freedom: {{ config["N_TASKS"] - session["solved"] }}</div>
+    <div>Current task: {{ session["cur_task"] }}</div>
+    <input type="submit" value="Another map (score will not reset)" name="another">
+    <input type="submit" value="Submit" name="submit">
+    <div id="map">
+        <img src="{{ url_for("return_task", id=session["cur_task"]) }}">
+        {% for n, p in pos.items() %}
+            <input name="{{ n }}" style="top: {{ -p[1]*950+1010 }}px; left: {{ p[0]*950+988 }}px" {% if n == start %}class="start" value="0" readonly{% endif %}>
+        {% endfor %}
+    </div>
+</form>
+</body>
+</html>
