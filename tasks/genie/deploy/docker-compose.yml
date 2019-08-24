@@ -1,7 +1,38 @@
-version: "2.0"
+version: "3.3"
 
 services:
-  task-expected:
+  service:
     build: .
+    restart: on-failure
+    read_only: true
+    shm_size: 16
+    networks:
+        - no-internet
+    deploy:
+      mode: replicated
+      replicas: 4
+      resources:
+        limits:
+          cpus: '0.4'
+          memory: 256m
+    ulimits:
+      nproc: 128
+      nofile:
+        soft: 128
+        hard: 128
+
+  haproxy:
+    build: ./haproxy
+    restart: on-failure
     ports:
-    - "25051:1337"
+        - 25051:1337
+    networks:
+        - no-internet
+        - internet
+
+networks:
+  no-internet:
+    driver: bridge
+    internal: true
+  internet:
+    driver: bridge

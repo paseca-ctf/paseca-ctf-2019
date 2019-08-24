@@ -1,0 +1,40 @@
+<html><head>
+<link rel="stylesheet" href="/static/cc.css">
+<link rel="stylesheet" href="/static/common.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function send(){
+	let nickname = $('#nickname')[0].value;
+	if(nickname.length > 0){
+		$.post("/", {'nickname': nickname}, function(data){
+			$('#msg')[0].innerHTML = '<b>' + data + '</b>';
+			$('#error')[0].className = "shorten_error_display";
+		});
+	}
+}
+</script>
+</head>
+<body><center><div id="content" class="" style="width: 700px;"><div class="shorten_page page_block" style="padding: 40px 20px 0;">
+  <div class="shorten_header">Skype ScreenName Generator</div>
+  <div class="shorten_about">Just type your nickname. We will do some unicode magic.</div>
+
+  <div class="shorten_row shorten_form_row" id="shorten_row">
+    <div class="shorten_input shorten_input_wrapper" id="shorten_input_wrapper">
+      <input type="text" class="dark shortener_input" id="nickname" placeholder="Your nickname">
+    </div>
+
+    <div class="shorten_input">
+      <button class="shorten_button flat_button" onclick="send()" id="shorten_btn">
+        Go
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="shorten_error" id="error" style="padding-bottom: 10px; height: 50px;">
+    <div class="msg"><div id="msg" class="msg_text"></div></div>
+  </div>
+  
+</div>
+
+</div></center></body></html>

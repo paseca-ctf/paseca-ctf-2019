@@ -14,7 +14,7 @@ from totp import current_number, next_number, last_numbers
 
 serializer = URLSafeSerializer('5y1HtjHuu2W3wvqVLrNEHKAQz8lfOKL4lbYUP8OksVUMnDnowCWjL6VvAZ4hjvRP')
 templates = Jinja2Templates(directory='templates')
-app = Starlette(debug=True)
+app = Starlette(debug=False)
 
 
 class BasicAuthBackend(AuthenticationBackend):

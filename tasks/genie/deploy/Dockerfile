@@ -1,5 +1,11 @@
-FROM ubuntu:16.04
+FROM debian:9-slim
+
+RUN apt-get update && \
+    apt-get --assume-yes install socat  && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./service /service
-RUN apt-get update && apt-get --assume-yes install socat 
-CMD socat TCP-LISTEN:1337,reuseaddr,fork EXEC:/service/genie
+RUN chmod a+x /service/genie
+
+CMD socat TCP-LISTEN:1337,reuseaddr,fork,su:nobody EXEC:/service/genie
