@@ -99,7 +99,7 @@ int main(int argc, const char *argv[])
             } 
             else 
             {
-                printf("Your password is wrong!\nOnly admin can view messages!");
+                puts("Your password is wrong!\nOnly admin can view messages!");
                 fflush(NULL);
             }
         }
