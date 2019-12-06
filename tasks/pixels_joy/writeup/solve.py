@@ -11,4 +11,5 @@ for i in range(len(r)):
         o.write(bytes([g[i]]))
     if i % 3 == 2:
         o.write(bytes([b[i]]))
+
 o.close()
